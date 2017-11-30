@@ -14,9 +14,11 @@ public class QuotersTest {
     }
 
     @Test
-    public void testConfig() {
-        context.getBean(TerminatorQuoter.class).sayQuote();
+    public void testConfig() throws InterruptedException {
+        while (true) {
+            Thread.sleep(100);
+            context.getBean(Quoter.class).sayQuote();
+        }
     }
-
 
 }
