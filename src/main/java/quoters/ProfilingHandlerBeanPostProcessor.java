@@ -18,7 +18,6 @@ public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
     private ProfilingController controller = new ProfilingController();
 
     public ProfilingHandlerBeanPostProcessor() throws Exception {
-        controller.setEnabled(true);
         MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();
         mBeanServer.registerMBean(controller, new ObjectName("profiling", "name", "controller"));
     }
@@ -29,7 +28,7 @@ public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
         if (beanClass.isAnnotationPresent(Profiling.class)) {
             map.put(beanName, beanClass);
         }
-        return null;
+        return bean;
     }
 
     @Nullable
@@ -43,7 +42,7 @@ public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
                             if (controller.isEnabled()) {
                                 System.out.println("Профилирую");
                                 long before = System.nanoTime();
-                                Object res = method.invoke(bean, args);
+                                    Object res = method.invoke(bean, args);
                                 long after = System.nanoTime();
                                 System.out.println(after - before);
                                 System.out.println("Всё");
@@ -54,6 +53,6 @@ public class ProfilingHandlerBeanPostProcessor implements BeanPostProcessor {
                         }
                     });
         }
-        return null;
+        return bean;
     }
 }
