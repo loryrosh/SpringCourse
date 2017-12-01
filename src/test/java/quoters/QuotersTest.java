@@ -2,23 +2,21 @@ package quoters;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class QuotersTest {
-    private ApplicationContext context;
-
-    @Before
-    public void setUp() throws Exception {
-        context = new ClassPathXmlApplicationContext("context.xml");
-    }
 
     @Test
     public void testConfig() throws InterruptedException {
-        //while (true) {
-        //    Thread.sleep(100);
-        //}
+        ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
         context.getBean(Quoter.class).sayQuote();
     }
 
+    @Test
+    public void testPropertiesDef() throws InterruptedException {
+        PropertyFileApplicationContext context = new PropertyFileApplicationContext("context.properties");
+        context.getBean(Quoter.class).sayQuote();
+    }
 }
