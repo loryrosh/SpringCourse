@@ -18,4 +18,14 @@ public class Config {
         Random random = new Random();
         return new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
     }
+
+    @Bean
+    public ColorFrame frame() {
+        return new ColorFrame() {
+            @Override
+            protected Color getColor() {
+                return color(); // обращение к @Bean color (а не вызов метода color())
+            }
+        };
+    }
 }

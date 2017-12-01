@@ -27,7 +27,7 @@ public class QuotersTest {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
         while (true) {
             context.getBean(ColorFrame.class).showOnRandomPlace();
-            Thread.sleep(50);
+            Thread.sleep(200);
         }
     }
 }
