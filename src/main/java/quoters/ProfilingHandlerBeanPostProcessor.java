@@ -3,6 +3,7 @@ package quoters;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.lang.Nullable;
+import quoters.annos.Profiling;
 
 import javax.management.MBeanServer;
 import javax.management.ObjectName;

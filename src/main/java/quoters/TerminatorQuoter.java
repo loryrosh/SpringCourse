@@ -1,5 +1,11 @@
 package quoters;
 
+import quoters.annos.DeprecatedClass;
+import quoters.annos.InjectRandomInt;
+import quoters.annos.PostProxy;
+import quoters.annos.Profiling;
+import quoters.interfaces.Quoter;
+
 import javax.annotation.PostConstruct;
 
 @Profiling

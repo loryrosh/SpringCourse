@@ -4,6 +4,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.lang.Nullable;
 import org.springframework.util.ReflectionUtils;
+import quoters.annos.InjectRandomInt;
 
 import java.lang.reflect.Field;
 import java.util.Random;

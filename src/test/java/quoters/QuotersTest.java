@@ -1,10 +1,9 @@
 package quoters;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import quoters.interfaces.Quoter;
 
 public class QuotersTest {
 

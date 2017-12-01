@@ -1,4 +1,4 @@
-package quoters;
+package quoters.interfaces;
 
 public interface Quoter {
     void sayQuote();

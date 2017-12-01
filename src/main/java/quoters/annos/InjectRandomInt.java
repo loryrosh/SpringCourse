@@ -1,9 +1,10 @@
-package quoters;
+package quoters.annos;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DeprecatedClass {
-    Class<T1000> newImpl();
+public @interface InjectRandomInt {
+    int min();
+    int max();
 }

@@ -1,5 +1,7 @@
 package quoters;
 
+import quoters.interfaces.ProfilingControllerMBean;
+
 public class ProfilingController implements ProfilingControllerMBean {
     private boolean enabled = false;
 
